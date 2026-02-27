@@ -16,28 +16,40 @@ export default function ContactPage() {
       </a>
       <h1 className="mt-6 text-3xl font-semibold tracking-tight">Contact</h1>
       <p className="mt-4 text-[var(--foreground)]">
-        Add your email and LinkedIn here when ready.
+        Get in touch for professional inquiries.
       </p>
 
-      <div className="mt-6 space-y-2 text-neutral-700">
-        <p>
-          Email: <span className="text-neutral-500">{cvProfile.email}</span>
-        </p>
-        <p>
-          LinkedIn: <span className="text-neutral-500">{cvProfile.linkedinUrl && (
-          <p>
+      <div className="mt-6 space-y-3 text-[var(--foreground)]">
+        <div>
+          <span className="font-medium">Email:</span>{" "}
+          {cvProfile.email ? (
+            <a
+              href={`mailto:${cvProfile.email}`}
+              className="underline underline-offset-4 hover:opacity-80"
+            >
+              {cvProfile.email}
+            </a>
+          ) : (
+            <span className="text-[var(--muted)]">coming soon</span>
+          )}
+        </div>
+
+        <div>
+          <span className="font-medium">LinkedIn:</span>{" "}
+          {cvProfile.linkedinUrl ? (
             <a
               href={cvProfile.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="underline underline-offset-4 hover:opacity-80"
             >
-              LinkedIn
+              View profile
             </a>
-          </p>
-        )}</span>
-        </p>
+          ) : (
+            <span className="text-[var(--muted)]">coming soon</span>
+          )}
+        </div>
       </div>
-    </main>
+    </div>
   );
 }
