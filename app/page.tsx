@@ -1,5 +1,6 @@
 import { cvProfile } from "@/content/cv";
 import Link from "next/link";
+import SelectedWork from "@/components/SelectedWork";
 
 export default function Home() {
   return (
@@ -69,6 +70,7 @@ export default function Home() {
           </p>
         </div>
       </section>
+      <SelectedWork />
 
       {/* Experience */}
       <section id="experience" className="mt-16 scroll-mt-24">
