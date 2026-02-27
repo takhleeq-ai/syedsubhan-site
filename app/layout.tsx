@@ -1,14 +1,21 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Syed Ahsan Subhan",
-  description: "Architecting Intelligence in FinTech & Health",
+  title: "Syed Ahsan Subhan — Architecting Intelligence in FinTech & Health",
+  description:
+    "Senior delivery and architecture in FinTech and Health. Building AI systems that survive real-world constraints.",
 };
 
-const NavLink = ({ href, label }: { href: string; label: string }) => (
+const NavLink = ({
+  href,
+  label,
+}: {
+  href: string;
+  label: string;
+}) => (
   <a
     href={href}
-    className="text-sm text-neutral-700 hover:text-black"
+    className="text-sm text-[var(--muted)] transition-colors hover:text-[var(--foreground)]"
   >
     {label}
   </a>
@@ -22,25 +29,29 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans">
-        <header className="border-b border-neutral-200">
-          <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-            <a href="/" className="font-semibold tracking-tight">
+        <header className="sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--background)]/95 backdrop-blur supports-[backdrop-filter]:bg-[var(--background)]/80">
+          <div className="mx-auto flex max-w-2xl flex-wrap items-center justify-between gap-4 px-5 py-4 sm:px-6">
+            <a
+              href="/"
+              className="font-semibold tracking-tight text-[var(--foreground)]"
+            >
               SyedSubhan.co.uk
             </a>
-            <nav className="flex flex-wrap gap-4">
-              <NavLink href="/architecting-intelligence" label="Architecting Intelligence" />
-              <NavLink href="/projects" label="Projects" />
+            <nav className="flex flex-wrap items-center gap-6">
+              <NavLink href="/#about" label="About" />
+              <NavLink href="/#experience" label="Experience" />
+              <NavLink href="/#projects" label="Projects" />
+              <NavLink href="/architecting-intelligence" label="Writing" />
               <NavLink href="/cv" label="CV" />
-              <NavLink href="/about" label="About" />
-              <NavLink href="/contact" label="Contact" />
+              <NavLink href="/#contact" label="Contact" />
             </nav>
           </div>
         </header>
 
-        <div className="mx-auto max-w-5xl px-6 py-10">{children}</div>
+        <main>{children}</main>
 
-        <footer className="border-t border-neutral-200">
-          <div className="mx-auto max-w-5xl px-6 py-6 text-sm text-neutral-500">
+        <footer className="border-t border-[var(--border)]">
+          <div className="mx-auto max-w-2xl px-5 py-6 text-sm text-[var(--muted)] sm:px-6">
             © {new Date().getFullYear()} Syed Ahsan Subhan
           </div>
         </footer>
