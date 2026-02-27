@@ -1,4 +1,5 @@
 import "./globals.css";
+import { cvProfile } from "@/content/cv";
 
 export const metadata = {
   title: "Syed Ahsan Subhan — Architecting Intelligence in FinTech & Health",
@@ -50,9 +51,19 @@ export default function RootLayout({
 
         <main>{children}</main>
 
-        <footer className="border-t border-[var(--border)]">
-          <div className="mx-auto max-w-2xl px-5 py-6 text-sm text-[var(--muted)] sm:px-6">
-            © {new Date().getFullYear()} Syed Ahsan Subhan
+        <footer className="border-t border-neutral-200">
+          <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-6 py-6 text-sm text-neutral-500">
+            <span>© {new Date().getFullYear()} Syed Ahsan Subhan</span>
+            {cvProfile.linkedinUrl && (
+              <a
+                href={cvProfile.linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-neutral-700"
+              >
+                LinkedIn
+              </a>
+            )}
           </div>
         </footer>
       </body>
