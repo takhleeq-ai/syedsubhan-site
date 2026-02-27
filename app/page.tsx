@@ -31,9 +31,35 @@ export default function Home() {
         </div>
       </div>
 
-      <p className="mt-6 text-neutral-700">
-        Building AI systems that survive real-world constraints.
-      </p>
+      {/* Technical Expertise */}
+      <section
+        id="expertise"
+        className="section mx-auto max-w-2xl border-t border-[var(--border)] px-5 py-12 sm:px-6"
+      >
+        <h2 className="text-xl font-semibold tracking-tight">
+          Technical Expertise
+        </h2>
+        <div className="mt-6 grid gap-8 sm:grid-cols-2">
+          <div>
+            <h3 className="text-sm font-medium text-[var(--muted)]">
+              Core
+            </h3>
+            <p className="mt-2 text-sm text-[var(--foreground)]">
+              Payment systems, Open Banking APIs, ML evaluation (precision,
+              recall, ROC-AUC), regulated-domain design, baseline pipelines.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-sm font-medium text-[var(--muted)]">
+              Applied AI
+            </h3>
+            <p className="mt-2 text-sm text-[var(--foreground)]">
+              Classifiers in imbalanced settings, confusion-matrix–driven
+              decisions, metric choice for product and compliance.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <div className="mt-8 flex flex-wrap gap-3">
         <a
