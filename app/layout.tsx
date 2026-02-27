@@ -1,4 +1,5 @@
 import "./globals.css";
+import Link from "next/link";
 import { cvProfile } from "@/content/cv";
 
 export const metadata = {
@@ -14,12 +15,12 @@ const NavLink = ({
   href: string;
   label: string;
 }) => (
-  <a
+  <Link
     href={href}
     className="text-sm text-[var(--muted)] transition-colors hover:text-[var(--foreground)]"
   >
     {label}
-  </a>
+  </Link>
 );
 
 export default function RootLayout({
@@ -32,17 +33,17 @@ export default function RootLayout({
       <body className="font-sans">
         <header className="sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--background)]/95 backdrop-blur supports-[backdrop-filter]:bg-[var(--background)]/80">
           <div className="mx-auto flex max-w-2xl flex-wrap items-center justify-between gap-4 px-5 py-4 sm:px-6">
-            <a
-              href="/"
-              className="font-semibold tracking-tight text-[var(--foreground)]"
-            >
-              SyedSubhan.co.uk
-            </a>
+            <Link
+  href="/"
+  className="font-semibold tracking-tight text-[var(--foreground)]"
+>
+  SyedSubhan.co.uk
+</Link> 
             <nav className="flex flex-wrap items-center gap-6">
               <NavLink href="/#about" label="About" />
               <NavLink href="/#experience" label="Experience" />
               <NavLink href="/#projects" label="Projects" />
-              <NavLink href="/architecting-intelligence" label="Writing" />
+              <NavLink href="/architecting-intelligence" label="Architecting Intelligence" />
               <NavLink href="/cv" label="CV" />
               <NavLink href="/#contact" label="Contact" />
             </nav>
