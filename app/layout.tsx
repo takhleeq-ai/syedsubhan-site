@@ -41,6 +41,7 @@ export default function RootLayout({
 </Link> 
             <nav className="flex flex-wrap items-center gap-6">
               <NavLink href="/#about" label="About" />
+              <NavLink href="/#selected-work" label="Highlights" />
               <NavLink href="/#experience" label="Experience" />
               <NavLink href="/#projects" label="Projects" />
               <NavLink href="/architecting-intelligence" label="Architecting Intelligence" />
