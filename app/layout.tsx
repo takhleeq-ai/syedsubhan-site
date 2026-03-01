@@ -44,7 +44,7 @@ export default function RootLayout({
               <NavLink href="/#selected-work" label="Highlights" />
               <NavLink href="/#experience" label="Experience" />
               <NavLink href="/#projects" label="Projects" />
-              <NavLink href="/architecting-intelligence" label="Architecting Intelligence" />
+              <NavLink href="/architecting-intelligence" label="AI Journey" / >
               <NavLink href="/cv" label="CV" />
               <NavLink href="/#contact" label="Contact" />
             </nav>
