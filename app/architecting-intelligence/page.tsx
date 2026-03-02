@@ -34,18 +34,29 @@ export default function AIJourneyPage() {
         Architecting Intelligence
       </h1>
 
-      <p className="mt-3 text-sm leading-relaxed text-[var(--foreground)]">
-        From regulated systems to applied AI — deliberately, from first principles.
-      </p>
+<p className="mt-3 text-sm leading-relaxed text-[var(--foreground)]">
+  Extending regulated systems thinking into applied AI.
+</p>
 
-      {/* Framing */}
-      <p className="mt-5 text-sm leading-relaxed text-[var(--muted)]">
-        I’m learning machine learning and generative AI in public. This is not a
-        highlight reel — it’s a disciplined log of fundamentals, experiments,
-        and applied builds. My background is in payments and regulated delivery;
-        I’m bringing that same rigor to evaluation, failure modes, and real
-        user outcomes.
-      </p>
+<div className="mt-5 space-y-4 text-sm leading-relaxed text-[var(--muted)]">
+  <p>
+    I’ve spent years working inside regulated financial ecosystems — payments
+    infrastructure, scheme alignment, partner integrations, and delivery under
+    strict governance. In those environments, failure modes matter more than
+    features.
+  </p>
+
+  <p>
+    Now I’m applying that same discipline to machine learning and generative
+    systems. This isn’t a pivot — it’s an extension.
+  </p>
+
+  <p>
+    This page is a structured, public log: fundamentals, experiments, and
+    applied builds — with an emphasis on evaluation, risk, and real user
+    outcomes.
+  </p>
+</div>
 
       {/* Roadmap */}
       <section className="mt-12">
