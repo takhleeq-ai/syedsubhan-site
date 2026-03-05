@@ -1,3 +1,4 @@
+import { getAllPosts } from "@/lib/posts";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,6 +9,9 @@ export const metadata = {
 };
 
 export default function AIJourneyPage() {
+  const posts = getAllPosts().filter((p) =>
+  p.slug.startsWith("ai-journey/")
+);
   return (
     <main className="mx-auto max-w-2xl px-5 py-12 sm:px-6">
       <Link
@@ -115,6 +119,43 @@ export default function AIJourneyPage() {
           </div>
         </div>
       </section>
+      <section className="mt-16">
+  <h2 className="text-xl font-semibold tracking-tight">Latest Notes</h2>
+  <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
+    Monday + Thursday updates. Short, cumulative, and linked back to real builds.
+  </p>
+
+  <div className="mt-8 divide-y divide-[var(--border)]">
+    {posts.length === 0 ? (
+      <div className="py-8 text-sm text-[var(--muted)]">
+        Notes landing soon.
+      </div>
+    ) : (
+      posts.map((post) => (
+        <div key={post.slug} className="py-8">
+          <h3 className="text-lg font-medium">
+            <Link
+              href={`/architecting-intelligence/${post.slug}`}
+              className="hover:opacity-80"
+            >
+              {post.title}
+            </Link>
+          </h3>
+
+          {post.summary && (
+            <p className="mt-3 text-sm leading-relaxed text-[var(--foreground)]">
+              {post.summary}
+            </p>
+          )}
+
+          {post.date && (
+            <p className="mt-3 text-xs text-[var(--muted)]">{post.date}</p>
+          )}
+        </div>
+      ))
+    )}
+  </div>
+</section>
 
       <section className="mt-12">
         <p className="text-sm text-[var(--muted)]">
