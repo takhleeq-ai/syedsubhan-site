@@ -5,18 +5,39 @@ import matter from "gray-matter";
 const POSTS_DIR = path.join(process.cwd(), "content", "architecting-intelligence");
 
 export type PostMeta = {
-  slug: string;
+  slug: string; // supports nested slugs like "ai-journey/week-1-evaluation-metrics"
   title: string;
   date: string;
   summary: string;
 };
 
-export function getAllPosts(): PostMeta[] {
-  const files = fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".md"));
+function walkMarkdownFiles(dir: string, baseDir: string): string[] {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  const files: string[] = [];
 
-  const posts = files.map((file) => {
-    const slug = file.replace(/\.md$/, "");
-    const fullPath = path.join(POSTS_DIR, file);
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+
+    if (entry.isDirectory()) {
+      files.push(...walkMarkdownFiles(fullPath, baseDir));
+      continue;
+    }
+
+    if (entry.isFile() && entry.name.endsWith(".md")) {
+      const rel = path.relative(baseDir, fullPath).replace(/\\/g, "/");
+      files.push(rel);
+    }
+  }
+
+  return files;
+}
+
+export function getAllPosts(): PostMeta[] {
+  const relFiles = walkMarkdownFiles(POSTS_DIR, POSTS_DIR);
+
+  const posts = relFiles.map((relPath) => {
+    const slug = relPath.replace(/\.md$/, "");
+    const fullPath = path.join(POSTS_DIR, relPath);
     const raw = fs.readFileSync(fullPath, "utf8");
     const { data } = matter(raw);
 
@@ -28,7 +49,6 @@ export function getAllPosts(): PostMeta[] {
     };
   });
 
-  // newest first
   posts.sort((a, b) => (a.date < b.date ? 1 : -1));
   return posts;
 }
