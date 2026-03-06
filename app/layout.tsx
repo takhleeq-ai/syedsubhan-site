@@ -6,6 +6,9 @@ export const metadata = {
   title: "Syed Ahsan Subhan — Architecting Intelligence in FinTech & Health",
   description:
     "Senior delivery and architecture in FinTech and Health. Building AI systems that survive real-world constraints.",
+  icons: {
+  icon: "/favicon.ico",
+},
 };
 
 const NavLink = ({
