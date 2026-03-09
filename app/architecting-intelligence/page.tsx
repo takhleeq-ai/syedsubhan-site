@@ -61,7 +61,17 @@ export default function AIJourneyPage() {
     outcomes.
   </p>
 </div>
-
+<p className="mt-6 text-sm text-[var(--muted)]">
+  Experiments and code for this journey live here:{" "}
+  <a
+    href="https://github.com/takhleeq-ai/AI-Learning-Lab"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="underline underline-offset-4 hover:opacity-80"
+  >
+    AI Learning Lab →
+  </a>
+</p>
       {/* Roadmap */}
       <section className="mt-12">
         <h2 className="text-xl font-semibold tracking-tight">Learning Path</h2>
