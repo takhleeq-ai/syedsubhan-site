@@ -84,24 +84,28 @@ I evaluated the same model at three thresholds:
 
 ## Results
 
-| Threshold | Precision | Recall | F1 | False Positives | False Negatives |
-|----------|----------|--------|----|----------------|----------------|
-| 0.50 | 0.00 | 0.00 | 0.00 | 0 | 54 |
-| 0.30 | 0.21 | 0.056 | 0.08 | 11 | 51 |
-| 0.10 | 0.18 | 0.44 | 0.26 | 106 | 30 |
+Threshold comparison:
 
-### Critical Observation
+- **0.50**
+  - Precision: 0.00
+  - Recall: 0.00
+  - F1: 0.00
+  - False Positives: 0
+  - False Negatives: 54
 
-At the default threshold of 0.50, the model predicts no positive cases.
+- **0.30**
+  - Precision: 0.21
+  - Recall: 0.056
+  - F1: 0.08
+  - False Positives: 11
+  - False Negatives: 51
 
-This results in zero recall, meaning the model completely fails to detect the minority class.
-
-Despite achieving high accuracy (~94%), the model is effectively unusable for this problem at the default threshold.
-
-Lowering the threshold increases recall significantly, reducing missed cases, but introduces more false positives.
-
----
-
+- **0.10**
+  - Precision: 0.18
+  - Recall: 0.44
+  - F1: 0.26
+  - False Positives: 106
+  - False Negatives: 30
 ## Visual
 
 ![Confusion Matrix at Threshold 0.10](/images/ai-journey/week-3-confusion-matrix-010.png)
