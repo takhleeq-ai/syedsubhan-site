@@ -3,42 +3,68 @@ title: "Week 4 — When the Model Doesn’t Decide"
 date: "2026-03-30"
 description: "Moving from decisions to scores, and why ranking matters more than thresholds."
 ---
+## Context
 
-Last week, I changed the threshold.
+Last week, I explored how changing the decision threshold affects model behaviour.
 
-This week, I removed it entirely.
+This week, I removed the threshold entirely — and something clicked.
 
-And something interesting happened:
+## The Shift
 
 The model never actually made decisions.
 
 It only produced scores.
 
-Every prediction was a probability — a ranking of how likely something was to be positive.
+Each prediction is a probability — a measure of how likely something is to be positive.
 
-The “decision” only appeared when I introduced a threshold.
+The “decision” only appears when we impose a threshold on top of those scores.
 
-That shift changes how I think about these systems.
+## Why This Matters
 
-In real-world environments like fraud detection, credit risk, or affordability:
+That reframe changes how models should be evaluated.
 
-We don’t rely on a single threshold.
+The important question is not:
 
-We:
-- prioritise the highest-risk cases  
-- review different score bands differently  
-- apply different actions at different levels  
+“Is the prediction correct?”
 
-Which means the real question is not:
+It is:
 
-**“Is the prediction correct?”**
+“How well does the model rank what matters?”
 
-But:
+## What I Explored
 
-**“How well does the model rank what matters?”**
+Instead of focusing on a fixed decision threshold, I looked at the model’s raw outputs.
 
-A model can look accurate, behave differently at different thresholds, and still rank poorly.
+- Generated predicted probabilities using `predict_proba`
+- Compared binary predictions vs probability scores
+- Plotted ROC curves
+- Plotted Precision–Recall curves
 
-This week, I’m exploring ROC curves, precision-recall curves, and what they reveal about model quality beyond a single decision point.
+![ROC Curve](/images/ai-journey/roc-curve-week-04.png)
 
-Full write-up and experiment coming later this week.
+
+![Precision Recall Curve](/images/ai-journey/pr-curve-week-04.png)
+
+These curves evaluate model behaviour across many possible thresholds, rather than locking evaluation to a single decision point.
+
+## Real-World Framing
+
+In systems like fraud detection, credit risk, and affordability:
+
+- We prioritise the highest-risk cases first
+- We treat different score bands differently
+- We apply actions based on levels of risk
+
+A fraud system, for example, doesn’t decide “fraud or not.”
+
+It ranks transactions by risk — and different actions are applied at different levels.
+
+## What Became Clear
+
+A model can look accurate, behave differently across thresholds, and still be poor at ranking.
+
+Accuracy alone does not capture that.
+
+## What’s Next
+
+Next, I’ll explore ROC-AUC and Precision–Recall AUC more explicitly — and how they help compare models beyond a single decision point.
