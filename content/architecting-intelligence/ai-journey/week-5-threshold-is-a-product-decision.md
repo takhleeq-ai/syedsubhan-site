@@ -116,6 +116,14 @@ A threshold should not be an invisible technical default.
 
 It should be explainable, reviewed, monitored, and connected to the intended business outcome.
 
+## Experiment artifacts
+
+The practical experiment behind this note lives in my AI Learning Lab repository:
+
+[AI Learning Lab repository](https://github.com/takhleeq-ai/AI-Learning-Lab)
+
+[Week 5 experiment folder](https://github.com/takhleeq-ai/AI-Learning-Lab/tree/main/experiments/week-05-thresholds)
+
 ## This Week’s Learning
 
 My main takeaway from Week 5 is this:
