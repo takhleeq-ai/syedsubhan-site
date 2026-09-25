@@ -3,13 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "AI Journey — Syed Ahsan Subhan",
+  title: "Architecting Intelligence — Syed Ahsan Subhan",
   description:
-    "Architecting Intelligence: my learning journey from fundamentals to applied AI systems.",
+    "A build-led learning lab exploring how useful AI-assisted software is designed, evaluated, and improved.",
 };
 
 export default function AIJourneyPage() {
-  const posts = getAllPosts().filter((p) => p.slug.startsWith("ai-journey/"));
+  const posts = getAllPosts().filter((p) =>
+    p.slug.startsWith("ai-journey/")
+  );
 
   return (
     <main className="mx-auto max-w-2xl px-5 py-12 sm:px-6">
@@ -20,6 +22,7 @@ export default function AIJourneyPage() {
         ← Back to home
       </Link>
 
+      {/* Hero */}
       <div className="mt-8 overflow-hidden rounded-3xl">
         <Image
           src="/images/ai-journey-hero.png"
@@ -31,43 +34,46 @@ export default function AIJourneyPage() {
         />
       </div>
 
+      {/* Introduction */}
       <h1 className="mt-10 text-3xl font-semibold tracking-tight">
         Architecting Intelligence
       </h1>
 
       <p className="mt-3 text-sm leading-relaxed text-[var(--foreground)]">
-        Extending regulated systems thinking into applied AI for real-world decision systems.
+        A build-led learning lab exploring how useful AI-assisted software is
+        designed, evaluated, and improved.
       </p>
 
       <div className="mt-5 space-y-4 text-sm leading-relaxed text-[var(--muted)]">
         <p>
-          I’ve spent years working inside regulated financial ecosystems —
+          I&apos;ve spent years working inside regulated financial ecosystems —
           payments infrastructure, scheme alignment, partner integrations, and
-          delivery under strict governance. In those environments, failure modes
-          matter more than features.
+          delivery under strict governance. In those environments, how a system
+          behaves matters as much as what it can do.
         </p>
 
         <p>
-          Now I’m applying that same discipline to machine learning and
-          generative systems. This isn’t a pivot — it’s an extension.
+          I&apos;m applying that same discipline to machine learning and
+          generative systems. This isn&apos;t a pivot away from systems
+          engineering — it&apos;s an extension of it.
         </p>
 
         <p>
-          As countries such as Saudi Arabia invest heavily in digital
-          infrastructure, AI capability, and intelligent service delivery,
-          understanding how these systems behave in real production environments
-          becomes increasingly important.
+          Architecting Intelligence started with experiments designed to
+          understand model behaviour. It is now evolving into a build-led
+          learning lab: small, useful tools built around real workflows, with
+          each build creating new questions about architecture, evidence,
+          evaluation, and human decision-making.
         </p>
 
         <p>
-          This page is a structured, public log: fundamentals, experiments, and
-          applied builds — with an emphasis on evaluation, risk, and real user
-          outcomes.
+          This page documents that process — what I build, the decisions behind
+          it, what I test, what fails, and what I learn along the way.
         </p>
       </div>
 
       <p className="mt-6 text-sm text-[var(--muted)]">
-        Experiments, notebooks, and code for this journey live here:{" "}
+        Experiments, notebooks, and code from the learning journey live here:{" "}
         <a
           href="https://github.com/takhleeq-ai/AI-Learning-Lab"
           target="_blank"
@@ -78,98 +84,148 @@ export default function AIJourneyPage() {
         </a>
       </p>
 
+      {/* Why */}
       <section className="mt-12">
-        <h2 className="text-xl font-semibold tracking-tight">Why this page exists</h2>
+        <h2 className="text-xl font-semibold tracking-tight">
+          Why this page exists
+        </h2>
 
         <div className="mt-5 space-y-4 text-sm leading-relaxed text-[var(--muted)]">
           <p>
-            Many modern platforms are no longer just APIs or data pipelines.
-            They are decision systems.
+            Building useful AI software involves more than sending a prompt to
+            a model. Real systems need structured inputs, clear boundaries,
+            reliable outputs, evaluation, and ways to handle uncertainty.
           </p>
 
           <p>
-            Fraud detection, anomaly detection, medical triage, and risk scoring
-            all depend on models that learn patterns from data.
+            They also require decisions about where deterministic software
+            should end and model-generated behaviour should begin — and how a
+            human remains in control when the output influences a real
+            decision.
           </p>
 
           <p>
-            Understanding how these systems work — and how they should be
-            evaluated — is becoming essential for anyone building digital
-            infrastructure.
+            The purpose of this lab is to explore those questions by building
+            rather than studying them only in isolation.
           </p>
 
-          <p>This page documents that learning journey.</p>
+          <p>
+            Each tool starts with a real problem. The implementation becomes
+            the experiment, and the results determine what I explore next.
+          </p>
         </div>
       </section>
 
+      {/* Journey */}
       <section className="mt-12">
-        <h2 className="text-xl font-semibold tracking-tight">Learning Path</h2>
+        <h2 className="text-xl font-semibold tracking-tight">
+          From Learning to Building
+        </h2>
 
         <div className="mt-8 divide-y divide-[var(--border)]">
+          {/* Foundation */}
           <div className="py-8">
-            <h3 className="text-lg font-medium">Phase 1 — Foundations</h3>
-            <p className="mt-3 text-sm leading-relaxed text-[var(--foreground)]">
-              Python fluency, data handling, and the mental models behind
-              supervised learning. Focus: clarity over complexity.
+            <h3 className="text-lg font-medium">
+              Foundation — Weeks 1–5
+            </h3>
+
+            <p className="mt-3 text-sm font-medium text-[var(--foreground)]">
+              Understanding Model Behaviour
             </p>
+
+            <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
+              The first five weeks focused on understanding how
+              machine-learning models behave rather than simply how to train
+              them. Starting with a basic classifier, I explored imbalanced
+              data, precision and recall, ranking, and decision thresholds.
+            </p>
+
+            <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
+              The key lesson was that models produce scores and probabilities;
+              the decisions, trade-offs, and consequences emerge from the
+              systems we build around them.
+            </p>
+
             <p className="mt-3 text-xs text-[var(--muted)]">
-              Now: numpy/pandas, data cleaning, train/test splits, baseline
-              thinking
+              Focus: classification · imbalanced data · precision and recall ·
+              ranking · thresholds · decision quality
             </p>
           </div>
 
+          {/* Current */}
           <div className="py-8">
-            <h3 className="text-lg font-medium">Phase 2 — Classical ML</h3>
-            <p className="mt-3 text-sm leading-relaxed text-[var(--foreground)]">
-              Regression and classification, feature engineering, and models
-              that survive messy data.
-            </p>
-            <p className="mt-3 text-xs text-[var(--muted)]">
-              Next: linear/logistic regression, trees, cross-validation,
-              leakage traps
-            </p>
-          </div>
+            <h3 className="text-lg font-medium">
+              Build Lab — Week 6 onwards
+            </h3>
 
-          <div className="py-8">
-            <h3 className="text-lg font-medium">Phase 3 — Evaluation & Risk</h3>
-            <p className="mt-3 text-sm leading-relaxed text-[var(--foreground)]">
-              Metrics, calibration, and decision quality — especially under
-              imbalance and regulation.
+            <p className="mt-3 text-sm font-medium text-[var(--foreground)]">
+              Building Useful Tools
             </p>
-            <p className="mt-3 text-xs text-[var(--muted)]">
-              Next: precision/recall tradeoffs, ROC-AUC, PR-AUC, thresholds,
-              explainability
-            </p>
-          </div>
 
-          <div className="py-8">
-            <h3 className="text-lg font-medium">Phase 4 — Generative AI</h3>
-            <p className="mt-3 text-sm leading-relaxed text-[var(--foreground)]">
-              Prompting, retrieval (RAG), grounding, and evaluation — building
-              safe patterns for real users.
+            <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
+              The next stage shifts the learning into small, useful
+              AI-assisted software built around real workflows. Instead of
+              exploring concepts in isolation, each build becomes the
+              environment for learning.
             </p>
-            <p className="mt-3 text-xs text-[var(--muted)]">
-              Next: retrieval pipelines, citations, hallucination controls,
-              eval harnesses
-            </p>
-          </div>
 
-          <div className="py-8">
-            <h3 className="text-lg font-medium">Phase 5 — Applied Builds</h3>
-            <p className="mt-3 text-sm leading-relaxed text-[var(--foreground)]">
-              Turning the learning into small, useful AI-assisted tools built around real workflows.
+            <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
+              That means thinking beyond the model itself: how information is
+              represented, what should be deterministic, where generated
+              behaviour adds value, how claims are grounded in evidence, and
+              how the resulting system should be evaluated.
             </p>
+
             <p className="mt-3 text-xs text-[var(--muted)]">
-              Focus: job-search workflows, structured analysis, explainable outputs, human-in-the-loop decisions
+              Focus: structured data · evidence · deterministic vs generated
+              behaviour · evaluation · explainability · human-in-the-loop
+              decisions
             </p>
           </div>
         </div>
       </section>
 
+      {/* Current Build */}
+      <section className="mt-12">
+        <h2 className="text-xl font-semibold tracking-tight">
+          Current Build — Role Fit Analyzer
+        </h2>
+
+        <div className="mt-5">
+          <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
+            A small AI-assisted tool for comparing a candidate&apos;s experience
+            with the requirements of a job description.
+          </p>
+
+          <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
+            The goal is not to produce an arbitrary compatibility score. The
+            tool should identify relevant evidence, distinguish direct matches
+            from reasonable inference, expose genuine gaps, and avoid inventing
+            experience that is not present in the source material.
+          </p>
+
+          <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
+            Building it provides a practical environment for exploring requirement extraction, structured representations, evidence matching, deterministic and LLM-generated behaviour, hallucination controls, and evaluation.
+          </p>
+
+          <Link
+            href="/architecting-intelligence/ai-journey/week-6-from-learning-models-to-building-tools"
+            className="mt-4 inline-block text-sm underline underline-offset-4 hover:opacity-80"
+          >
+            Read the Week 6 introduction →
+          </Link>
+        </div>
+      </section>
+
+      {/* Notes */}
       <section className="mt-16">
-        <h2 className="text-xl font-semibold tracking-tight">Latest Notes</h2>
+        <h2 className="text-xl font-semibold tracking-tight">
+          Latest Notes
+        </h2>
+
         <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
-          Short, cumulative notes documenting what I learn, build, test, and change along the way.
+          Short, cumulative notes documenting what I learn, build, test, and
+          change along the way.
         </p>
 
         <div className="mt-8 divide-y divide-[var(--border)]">
@@ -206,6 +262,7 @@ export default function AIJourneyPage() {
         </div>
       </section>
 
+      {/* Related */}
       <section className="mt-12">
         <p className="text-sm text-[var(--muted)]">
           Related:{" "}
