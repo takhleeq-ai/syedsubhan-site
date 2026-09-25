@@ -157,12 +157,10 @@ export default function AIJourneyPage() {
           <div className="py-8">
             <h3 className="text-lg font-medium">Phase 5 — Applied Builds</h3>
             <p className="mt-3 text-sm leading-relaxed text-[var(--foreground)]">
-              Turning the learning into products: FinLens + Questions for My
-              Doctor — with constraints and evaluation built in.
+              Turning the learning into small, useful AI-assisted tools built around real workflows.
             </p>
             <p className="mt-3 text-xs text-[var(--muted)]">
-              Focus: real workflows, measurable outcomes, and responsible system
-              boundaries
+              Focus: job-search workflows, structured analysis, explainable outputs, human-in-the-loop decisions
             </p>
           </div>
         </div>
@@ -171,8 +169,7 @@ export default function AIJourneyPage() {
       <section className="mt-16">
         <h2 className="text-xl font-semibold tracking-tight">Latest Notes</h2>
         <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
-          Monday + Thursday updates. Short, cumulative, and linked back to real
-          builds.
+          Short, cumulative notes documenting what I learn, build, test, and change along the way.
         </p>
 
         <div className="mt-8 divide-y divide-[var(--border)]">
